@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<article class="post-detail">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-meta">Автор: {{ post.author.username }} | Дата: {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+    <p class="post-content">{{ post.content }}</p>
+</article>
+
+<h3 class="comments-title">Комментарии</h3>
+<div class="comments-container">
+    {% for comment in post.comments %}
+    <div class="comment">
+        <p class="comment-content">{{ comment.content }}</p>
+        <p class="comment-meta">Автор: {{ comment.user.username }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<h3 class="add-comment-title">Добавить комментарий</h3>
+<form method="POST" action="" class="comment-form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.content.label(class="form-label") }}
+        {{ form.content(class="form-input") }}
+        {% if form.content.errors %}
+        <span class="form-error">{{ form.content.errors[0] }}</span>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>
+{% endblock %}

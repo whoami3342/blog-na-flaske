@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог на Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Контейнер для всей страницы -->
+    <div class="page-wrapper">
+        <!-- Шапка -->
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <h1 class="logo"><a href="{{ url_for('home') }}">Блог на Flask</a></h1>
+                    <ul class="nav-links">
+                        <li><a href="{{ url_for('home') }}">Главная</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+                        <li><a href="{{ url_for('new_post') }}">Новый пост</a></li>
+                        {% if current_user.username == 'admin' %}
+                        <li><a href="{{ url_for('admin') }}">Админ</a></li>
+                        {% endif %}
+                        {% else %}
+                        <li><a href="{{ url_for('login') }}">Войти</a></li>
+                        <li><a href="{{ url_for('register') }}">Регистрация</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- Подвал -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 whoam3342. Все права защищены.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
