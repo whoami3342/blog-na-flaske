@@ -66,3 +66,11 @@
 - **Создание постов**: После входа в систему вы сможете создавать новые посты, нажав на ссылку "Новый пост".
 - **Комментарии**: На странице каждого поста вы можете оставить комментарий.
 - **Админ-панель**: Если вы зарегистрированы как администратор (имя пользователя admin), вы можете удалять посты через админ-панель.
+
+### Скриншоты
+
+![image](https://github.com/user-attachments/assets/71f8907c-0c03-406a-8340-9d0247871425)
+![image](https://github.com/user-attachments/assets/de8ae254-1dab-48e0-b433-2bfbef0c4592)
+![image](https://github.com/user-attachments/assets/48998166-b4a4-4053-8b71-9f8a8825c38c)
+![image](https://github.com/user-attachments/assets/613e9a01-4e5e-4f23-a9fd-cd30432a5340)
+![image](https://github.com/user-attachments/assets/bb44935a-ba41-4f0b-9af6-20b1037305ba)
