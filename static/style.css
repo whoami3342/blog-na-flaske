@@ -8,14 +8,14 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Убедитесь, что body занимает всю высоту экрана */
+    min-height: 100vh; /* Убедитесь, что body занимает всю высоту экрана, убедились)) */ 
 }
 
 /* Контейнер для всей страницы */
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Убедитесь, что контейнер занимает всю высоту экрана */
+    min-height: 100vh; /* Убедитесь, что контейнер занимает всю высоту экрана, тут тоже убедились */
 }
 
 .container {
@@ -196,7 +196,7 @@ footer {
 
 /* Формы */
 .form {
-    max-width: 600px; /* Увеличиваем ширину формы */
+    max-width: 600px;
     margin: 0 auto;
     background: #fff;
     padding: 20px;
